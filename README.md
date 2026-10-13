@@ -62,8 +62,8 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/ourhouchmohamed97/brewhaus-practicum.git
-   cd brewhaus-practicum
+   git clone https://github.com/ourhouchmohamed97/brewhaus-practicum-assignments.git
+   cd brewhaus-practicum-assignments
    ```
 
 2. **Install dependencies:**
