@@ -2,6 +2,10 @@
 
 Assignment 2: Assignment 1's travel landing page rebuilt with React, Vite and Tailwind CSS v3 (plain JavaScript).
 
+## Live Demo
+
+[Click to view!](https://brewhaus-practicum-assignments-taupe.vercel.app/)
+
 ## Run
 ```bash
 npm install
