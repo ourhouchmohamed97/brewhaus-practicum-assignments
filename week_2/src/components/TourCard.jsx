@@ -5,7 +5,6 @@ import { ClockIcon, StarIcon } from './Icons';
 // One reusable card. It receives ONE tour object as a prop and displays it.
 function TourCard({ tour }) {
   const [seats, setSeats] = useState(1);
-.
   const total = tour.price * seats;
   const money = (n) => `$${n.toLocaleString('en-US')}`;
 
