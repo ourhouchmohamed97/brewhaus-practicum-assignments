@@ -4,12 +4,8 @@ import { ClockIcon, StarIcon } from './Icons';
 
 // One reusable card. It receives ONE tour object as a prop and displays it.
 function TourCard({ tour }) {
-  // useState #3: how many seats the visitor wants for THIS card.
-  // Every card has its own separate `seats` (each TourCard is its own component instance).
-  // The stepper below is "controlled" by this state.
   const [seats, setSeats] = useState(1);
-
-  // Derived value: no need for extra state, we just calculate it on every render.
+.
   const total = tour.price * seats;
   const money = (n) => `$${n.toLocaleString('en-US')}`;
 
