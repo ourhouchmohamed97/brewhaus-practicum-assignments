@@ -4,19 +4,12 @@ import TourCard from './TourCard';
 import Container from './Container';
 import { ChevronRightIcon } from './Icons';
 
-// Build the filter buttons from the data itself: ['All', 'Adventure', 'Cultural', ...]
-// `new Set` removes duplicates, so each category appears once.
+
 const categories = ['All', ...new Set(tours.map((tour) => tour.category))];
 
 function TourGrid() {
-  // useState #2: which filter is selected right now?
-  // - activeCategory = current value ('All' at first)
-  // - setActiveCategory = the function that changes it and re-renders the grid
   const [activeCategory, setActiveCategory] = useState('All');
 
-  // Every render, we recompute the visible list from the full data.
-  // We do NOT store the filtered list in state: it can always be derived
-  // from `tours` + `activeCategory`. (State should be as small as possible.)
   const visibleTours =
     activeCategory === 'All'
       ? tours
@@ -68,8 +61,6 @@ function TourGrid() {
           })}
         </div>
 
-        {/* Cards: one <TourCard> per tour in the filtered list.
-            `key` helps React track each card; we use the unique id. */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {visibleTours.map((tour) => (
             <TourCard key={tour.id} tour={tour} />
