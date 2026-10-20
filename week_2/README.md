@@ -9,8 +9,8 @@ Assignment 2: Assignment 1's travel landing page rebuilt with React, Vite and Ta
 ## Run
 ```bash
 npm install
-npm run dev      # http://localhost:5173
-npm run build    # production build in /dist
+npm run dev
+npm run build
 ```
 
 ## Structure
