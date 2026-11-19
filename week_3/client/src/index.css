@@ -1,0 +1,18 @@
+/* Tailwind's three layers. This replaces the old hand-written styles.css.
+   (Tailwind's "base" layer already sets box-sizing: border-box on everything.) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 56px; /* so sticky header doesn't cover anchored sections */
+  }
+  body {
+    @apply bg-surface font-sans text-ink antialiased;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+}
