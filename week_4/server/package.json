@@ -1,0 +1,26 @@
+{
+  "name": "wanderlust-server",
+  "version": "2.0.0",
+  "description": "Express API with PostgreSQL session store and Stripe Checkout integration",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "seed": "node scripts/002_seed.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "connect-pg-simple": "^10.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "express-session": "^1.18.0",
+    "pg": "^8.23.1",
+    "stripe": "^15.0.0"
+  }
+}
