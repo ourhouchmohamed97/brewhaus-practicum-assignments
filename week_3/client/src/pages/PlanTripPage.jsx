@@ -214,7 +214,7 @@ function PlanTripPage() {
             <div className="flex flex-col gap-6">
               <div>
                 <h3 className="font-display text-xl font-bold text-white mb-3">Why Choose Us?</h3>
-                <ul className="space-y-3 text-white/85">
+                <ul className="space-y-3 text-white/90">
                   <li className="flex items-start gap-2.5">
                     <ShieldIcon size={18} className="mt-0.5 flex-shrink-0 text-accent" />
                     <span><strong>24/7 Support</strong> - Our team is available around the clock for any questions.</span>
@@ -236,7 +236,7 @@ function PlanTripPage() {
 
               <div>
                 <h3 className="font-display text-xl font-bold text-white mb-3">Contact Info</h3>
-                <div className="space-y-2 text-white/85">
+                <div className="space-y-2 text-white/90">
                   <p><strong>Email:</strong> <a href="mailto:support@wanderlust.travel" className="text-accent hover:underline">support@wanderlust.travel</a></p>
                   <p><strong>Phone:</strong> +1 (800) 555-0123</p>
                   <p><strong>Response Time:</strong> Within 24 hours</p>
@@ -245,7 +245,7 @@ function PlanTripPage() {
 
               <div>
                 <h3 className="font-display text-xl font-bold text-white mb-3">Our Guarantee</h3>
-                <p className="text-white/85 text-sm">
+                <p className="text-white/90 text-sm">
                   All bookings are protected by our Wanderlust Travel Guarantee. Your security and satisfaction are our top priorities.
                 </p>
               </div>

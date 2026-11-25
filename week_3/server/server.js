@@ -1,11 +1,15 @@
 // server.js: entry point for the Express server.
 // Loads environment variables, configures middleware, mounts routes.
+// Week 4 adds Stripe Checkout routes and raw body handling for webhooks.
 import 'dotenv/config';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import itemsRouter from './src/routes/items.js';
 import authRouter from './src/routes/auth.js';
+import checkoutRouter from './src/routes/checkout.js';
+import ordersRouter from './src/routes/orders.js';
+import webhookRouter from './src/routes/webhook.js';
 import { sessionStore, COOKIE_OPTIONS } from './src/db/sessionStore.js';
 import { configureCors } from './src/middleware/cors.js';
 
@@ -16,6 +20,11 @@ if (!process.env.DATABASE_URL) {
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Stripe webhook MUST be mounted BEFORE express.json() so the raw request
+// body is preserved for signature verification. The webhook route applies
+// its own express.raw({ type: 'application/json' }) middleware.
+app.use('/webhooks/stripe', webhookRouter);
 
 // Middleware: parse request bodies and cookies.
 app.use(express.json());
@@ -39,6 +48,8 @@ configureCors(app);
 // API routes.
 app.use('/api/items', itemsRouter);
 app.use('/api/auth', authRouter);
+app.use('/api/checkout', checkoutRouter);
+app.use('/api/orders', ordersRouter);
 
 // Health check endpoint (Railway expects one).
 app.get('/health', (req, res) => res.json({ status: 'ok' }));

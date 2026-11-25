@@ -2,6 +2,7 @@
 // The URL comes from VITE_API_URL (set in client/.env). If it is missing we
 // fall back to a relative path so the app still works when built and served
 // from the same origin as the API (e.g. behind a reverse proxy in production).
+// Week 4 adds checkout (Stripe) and order lookup endpoints.
 const BASE = import.meta.env.VITE_API_URL || '/api';
 
 async function request(path, options = {}) {
@@ -45,6 +46,12 @@ export const api = {
 
   // GET /api/auth/me
   me: () => request('/auth/me'),
+
+  // POST /api/checkout - create Stripe Checkout Session
+  checkout: (body) => request('/checkout', { method: 'POST', body: JSON.stringify(body) }),
+
+  // GET /api/orders/:id - fetch order by Stripe session ID
+  getOrder: (checkoutSessionId) => request(`/orders/${checkoutSessionId}`),
 };
 
 export default api;
